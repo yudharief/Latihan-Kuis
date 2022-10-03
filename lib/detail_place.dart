@@ -40,7 +40,7 @@ class _DetailPageState extends State<DetailPage> {
           Container(
             height: (MediaQuery.of(context).size.height)/3,
             decoration: BoxDecoration(
-              color: (isFavorite) ? Colors.deepOrange : Colors.white,
+              color: (isFavorite) ? Colors.pink : Colors.white,
             ),
             child: ListView.builder(
               padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -50,26 +50,29 @@ class _DetailPageState extends State<DetailPage> {
               itemBuilder: (context, index) {
                 return Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 10, right: 10),
+                  margin: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 10),
                   decoration: BoxDecoration(
                     // color: Colors.deepOrange,
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black54,
-                        offset: Offset(0.0, 4.0),
-                        blurRadius: 6.0,
+                        spreadRadius: 4.0,
+                        blurRadius: 5.0,
                       )
                     ],
                   ),
                   child: Row(
                     children: [
-                      Image.network(
-                        widget.place.imageUrls[index],
-                        width: 200,
-                        height: 210,
-                        fit: BoxFit.cover,
-                      )
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.network(
+                            widget.place.imageUrls[index],
+                            width: 200,
+                            height: 210,
+                            fit: BoxFit.cover,
+                          ),
+                      ),
                     ],
                   ),
                 );
@@ -80,6 +83,7 @@ class _DetailPageState extends State<DetailPage> {
             padding: EdgeInsets.symmetric(horizontal: 10),
             alignment: Alignment.center,
             child: Card(
+
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -89,7 +93,7 @@ class _DetailPageState extends State<DetailPage> {
                   Text(
                     widget.place.name,
                     style: TextStyle(
-                      color: (isFavorite) ? Colors.deepOrangeAccent : Colors.black,
+                      color: (isFavorite) ? Colors.amberAccent : Colors.black,
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -116,7 +120,7 @@ class _DetailPageState extends State<DetailPage> {
                   Text(
                     "${widget.place.openDays} | ${widget.place.openTime}",
                     style: TextStyle(
-                        color: Colors.deepOrangeAccent,
+                        color: Colors.purpleAccent,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),

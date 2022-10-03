@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Latihan Kuis 08",
+      title: "Latihan Kuis ",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-        backgroundColor: Colors.white70
+        primarySwatch: Colors.cyan,
+        backgroundColor: Colors.grey
       ),
       home: MainScreen(),
     );

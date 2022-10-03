@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:latkuis/detail_place.dart';
@@ -18,7 +18,8 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text("Agen Wisata Turis"),
       ),
-      body: ListView.builder(
+      body: ListView.
+      builder(
         itemBuilder: (context, index) {
           final TourismPlace place = tourismPlaceList[index];
 
@@ -36,11 +37,15 @@ class _MainScreenState extends State<MainScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+
                   Container(
+                    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 30),
+                    margin: EdgeInsets.all(10),
                     height: 80,
                     // width: 80,
                     width: double.infinity,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
                         fit: BoxFit.fitWidth,
                         colorFilter: ColorFilter.mode(
@@ -59,8 +64,8 @@ class _MainScreenState extends State<MainScreen> {
                               shadows: [
                                 Shadow(
                                     color: Colors.white,
-                                    blurRadius: 10,
-                                    offset: Offset(2, 2))
+                                    blurRadius: 5,
+                                    offset: Offset(2,2))
                               ],
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
